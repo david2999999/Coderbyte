@@ -5,8 +5,7 @@
 function LetterChanges(str) { 
   
   str = str.split("");
-  var str2 = [];
-  var nextLetter;
+  var str2 = [], nextLetter;
   
   for(var i = 0; i < str.length; i++){
       if(str[i].length === 1 && str[i].match(/[a-z]/i)){
@@ -23,7 +22,6 @@ function LetterChanges(str) {
   }
   
   str2 = str2.join("");
-  // code goes here  
   return str2; 
          
 }
