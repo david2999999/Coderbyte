@@ -10,24 +10,32 @@
 
 function KaprekarsConstant(num) { 
 
-    var counter = 0, biggerNum, smallerNum;
+    var counter = 0, biggerNum, smallerNum, strNum;
     
   while(1){
-       smallerNum = parseInt(num.toString().split("").sort().join(""));
+      smallerNum = parseInt(num.toString().split("").sort().join(""));
         biggerNum = parseInt(num.toString().split("").sort(function(a,b){
             return b - a;
         }).join(""));
         
       num = biggerNum - smallerNum;
+        
+      num = num.toString();
+        
+      while(num.length != 4){
+          num = "0" + num;
+      }
+      
+      strNum = num;
+      
+      num = num.split("").sort(function(a,b){
+          return b-a;
+      }).join("");
+      
       counter++;
-
-              
-      if(num === 6174)
+      if(strNum === (6174).toString())
         return counter;
   }
 
    
 }
-   
-// keep this function call here 
-KaprekarsConstant(readline());  
